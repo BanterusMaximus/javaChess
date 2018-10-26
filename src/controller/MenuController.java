@@ -34,4 +34,19 @@ public class MenuController
 			System.out.println("Initilising two player game...");
 			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
 		}
+		
+		@FXML
+		private void initAgainstComputerGame(ActionEvent actionEvent)
+		{
+			System.out.println("Initilising player vs computer game...");
+			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
+		}
+		
+		@FXML
+		private void initOnePlayerChallenge(ActionEvent actionEvent)
+		{
+			System.out.println("Initilising one player challenges...");
+			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
+		}
+		
 }
