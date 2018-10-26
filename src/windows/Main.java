@@ -60,7 +60,7 @@ public class Main extends Application
 	
 	public void setSceneAndShow(Scene scene)
 	{
-		System.out.println("Updating scene...");
+		System.out.println("---------------------------------------\nUpdating scene...\n---------------------------------------\n");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

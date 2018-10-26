@@ -27,4 +27,11 @@ public class MenuController
 		{
 			Main.closeStage();
 		}
+		
+		@FXML
+		private void initTwoPlayerGame(ActionEvent actionEvent)
+		{
+			System.out.println("Initilising two player game...");
+			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
+		}
 }

@@ -18,7 +18,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button id="twoPlayerButton" fx:id="twoPlayerButton" layoutX="212.0" layoutY="119.0" mnemonicParsing="false" text="Local 2 Player">
+      <Button id="twoPlayerButton" fx:id="twoPlayerButton" layoutX="212.0" layoutY="119.0" mnemonicParsing="false" onAction="#initTwoPlayerGame" text="Local 2 Player">
          <font>
             <Font size="24.0" />
          </font>
