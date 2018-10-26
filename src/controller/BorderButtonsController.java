@@ -11,11 +11,19 @@ public class BorderButtonsController
 	@FXML
 	private MenuItem ExitMenuItem;
 	
+	@FXML
+	private MenuItem fullscreenToggle;
 	
 	@FXML
 	private void exitApplication(ActionEvent actionEvent)
 	{
 		Main.closeStage();
+	}
+	
+	@FXML
+	private void toggleFullscreen(ActionEvent actionEvent)
+	{
+		Main.toggleFullscreen();
 	}
 	
 }

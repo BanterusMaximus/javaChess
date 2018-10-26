@@ -57,6 +57,11 @@ public class Main extends Application
 		}
 	}
 	
+	public static void toggleFullscreen()
+	{
+		primaryStage.setFullScreen(true);
+	}
+	
 	
 	public void setSceneAndShow(Scene scene)
 	{
