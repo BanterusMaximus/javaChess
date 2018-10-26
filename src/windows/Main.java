@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 
 public class Main extends Application 
@@ -24,8 +22,15 @@ public class Main extends Application
 			Main.primaryStage = primaryStage;
 			Main.primaryStage.setTitle("Java Chess");
 			rootBorder = new BorderPane();
-		
+			
 			initRootBorder();
+			
+			GameMenu menuDisplay = new GameMenu();
+			
+			rootBorder.setCenter(menuDisplay.getGameAnchorPane());
+			
+			Scene scene = new Scene(rootBorder);
+			setSceneAndShow(scene);
 		} 
 		
 		catch(Exception e) 
@@ -39,13 +44,11 @@ public class Main extends Application
 	{
 		try
 		{
+		System.out.println("Initalising root border pane...");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("rootBorder.fxml"));
 		rootBorder = (BorderPane) loader.load();
-		
-		Scene scene = new Scene(rootBorder);
-		
-		setSceneAndShow(scene);
+		System.out.println("Initalilised root border pane.\n");
 		}
 		
 		catch (Exception e)
@@ -54,11 +57,15 @@ public class Main extends Application
 		}
 	}
 	
-	
+	public static void toggleFullscreen()
+	{
+		primaryStage.setFullScreen(true);
+	}
 	
 	
 	public void setSceneAndShow(Scene scene)
 	{
+		System.out.println("---------------------------------------\nUpdating scene...\n---------------------------------------\n");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -66,6 +73,7 @@ public class Main extends Application
 
 	public static void closeStage()
 	{
+		System.out.println("Closing stage...");
 		primaryStage.close();
 	}
 	
@@ -73,6 +81,7 @@ public class Main extends Application
 	
 	public static void main(String[] args) 
 	{
+		System.out.println("Starting program...\n");
 		launch(args);
 	}
 }
