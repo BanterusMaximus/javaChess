@@ -1,6 +1,7 @@
 package board;
 
 import javafx.application.Application;
+import windows.Main;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -17,11 +18,13 @@ import javafx.stage.Stage;
 
 public class ChessBoardGUI  extends Application {
 	
-	public static void main(String[] args) {
+	public static void ChessBoardStart() {
 		
 		try {
-			launch(args);
-			System.exit(0);
+			Main.setStageTitle("2 Player Chess");
+			initChessBoard();
+			
+			
 		} catch (Exception error) {
 			
 			error.printStackTrace();
@@ -29,35 +32,31 @@ public class ChessBoardGUI  extends Application {
 		}
 	}
 	
-	private ChessBoard board;
+	private static ChessBoard board;
 	
-	@Override
-	public void start(Stage mainStage) {
-		
-		mainStage.setTitle("Chess Game");
+	public static void initChessBoard() {
 		
 		BorderPane root = new BorderPane();
 		Scene mainScene = new Scene(root);
-		mainStage.setScene(mainScene);
 		
-		mainScene.getStylesheets().add("windows/stylesheet.css");
+		mainScene.getStylesheets().add("windows/application.css");
 		
 		board = new ChessBoard();
 		root.setCenter(board);
 		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
-		mainStage.show();
+		Main.setSceneAndShow(mainScene);
 		
 	}
 	
-	public void onQuit() {
+	public static void onQuit() {
 		
 		Platform.exit();
 		System.exit(0);
 	}
 	
-	public void onDisplayAbout() {
+	public static void onDisplayAbout() {
 		
 		Alert infoAlert = new Alert(AlertType.INFORMATION);
 		infoAlert.setTitle("About");
@@ -66,7 +65,7 @@ public class ChessBoardGUI  extends Application {
 		infoAlert.showAndWait();
 	}
 	
-	private MenuBar generateMenuBar() {
+	private static MenuBar generateMenuBar() {
 		
 		MenuBar menuBar = new MenuBar();
 		
@@ -92,6 +91,12 @@ public class ChessBoardGUI  extends Application {
         menuHelp.getItems().add(menuItemAbout);
 
         return menuBar;
+		
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
 		
 	}
 }

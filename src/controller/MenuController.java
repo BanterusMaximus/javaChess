@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import board.ChessBoardGUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import windows.Main;
@@ -31,6 +32,7 @@ public class MenuController
 		@FXML
 		private void initTwoPlayerGame(ActionEvent actionEvent)
 		{
+			ChessBoardGUI.ChessBoardStart();
 			System.out.println("Initilising two player game...");
 			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
 		}

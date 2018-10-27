@@ -63,7 +63,7 @@ public class Main extends Application
 	}
 	
 	
-	public void setSceneAndShow(Scene scene)
+	public static void setSceneAndShow(Scene scene)
 	{
 		System.out.println("---------------------------------------\nUpdating scene...\n---------------------------------------\n");
 		primaryStage.setScene(scene);
@@ -77,7 +77,10 @@ public class Main extends Application
 		primaryStage.close();
 	}
 	
-	
+	public static void setStageTitle(String string)
+	{
+		primaryStage.setTitle(string);
+	}	
 	
 	public static void main(String[] args) 
 	{

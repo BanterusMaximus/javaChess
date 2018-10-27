@@ -15,8 +15,10 @@ public abstract class Piece {
 		
 		hasMoved = false;
 		
-		String location = "assets/pieces/";
+		String location = "assets/";
+		//System.out.println("lmao");
 		String filename = this.getColor() + "_" + this.getName() + ".png";
+		System.out.printf("%s", filename);
 		this.image = new Image(location + filename);
 		
 	}
