@@ -45,6 +45,9 @@ public class ChessBoardGUI  extends Application {
 		board = new ChessBoard();
 		root.setCenter(board);
 		
+		MenuBar menuBar = generateMenuBar();
+		root.setTop(menuBar);
+		mainStage.show();
 		
 	}
 	

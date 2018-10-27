@@ -3,7 +3,13 @@ package board;
 import javafx.scene.layout.GridPane;
 import move.MoveInformation;
 import move.MoveList;
+import piece.Bishop;
+import piece.King;
+import piece.Knight;
+import piece.Pawn;
 import piece.Piece;
+import piece.Queen;
+import piece.Rook;
 
 public class ChessBoard extends GridPane {
 
