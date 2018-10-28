@@ -7,7 +7,7 @@ public abstract class Piece {
 	
 	protected boolean hasMoved;
 	protected Image image;
-	protected boolean color;
+	public boolean color;
 	
 	public Piece(boolean color) {
 		

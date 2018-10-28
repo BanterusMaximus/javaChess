@@ -34,7 +34,7 @@ public class MenuController
 		{
 			ChessBoardGUI.ChessBoardStart();
 			System.out.println("Initilising two player game...");
-			System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
+			//System.err.println("!\t\t\t\t!\n   NOT YET IMPLEMENTED - TODO\n!\t\t\t\t!");
 		}
 		
 		@FXML

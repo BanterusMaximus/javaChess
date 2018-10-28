@@ -16,6 +16,8 @@ public class ChessBoard extends GridPane {
 	public Space[][] spaces = new Space[8][8];
 
 	public Space activeSpace = null;
+	
+	public boolean turn = true;
 
 	public ChessBoard() {
 		
@@ -123,6 +125,11 @@ public class ChessBoard extends GridPane {
     		
     	}
     	
+    	if ( activeSpace == clickedSpace ) {
+    		
+    		this.setActiveSpace(null);
+    	}
+    	
     	else {
     		
     		if ( spaces[x][y].getPiece() != null ) {
@@ -140,6 +147,7 @@ public class ChessBoard extends GridPane {
             Space newSpace = spaces[p.getNewX()][p.getNewY()];
 
             newSpace.setPiece( oldSpace.removePiece() );
+            whosTurn();
             return true;
         }
         else // invalid move
@@ -194,6 +202,11 @@ public class ChessBoard extends GridPane {
         {//iterates through multiple times if has multiple possible moves
             multiMoveCount = 1;
             if(piece.usesSingleMove() == false) {multiMoveCount = 8;}
+            
+            if ( piece.color != turn ) {
+            	
+            	return false;
+            }
 
             boolean hasCollided = false;
 
@@ -242,6 +255,11 @@ public class ChessBoard extends GridPane {
 
         return true;
     }
+    
+    protected void whosTurn() {
+    	//switches turn
+    	turn = !turn;
+    }
 
     protected boolean pawnValidityCheck(MoveInformation p)
     {
@@ -249,6 +267,11 @@ public class ChessBoard extends GridPane {
         Space oldSpace = spaces[p.getOldX()][p.getOldY()];
         Space newSpace = spaces[p.getNewX()][p.getNewY()];
         Piece piece = oldSpace.getPiece();
+        
+        if ( piece.color != turn ) {
+        	
+        	return false;
+        }
 
         //If it's not a pawn, it passes
         if ( !piece.getName().equals("pawn")) {return true;}
