@@ -119,7 +119,7 @@ public class ChessBoard extends GridPane {
     		
     		MoveInformation m;
     		m = new MoveInformation(activeSpace.getX(), activeSpace.getY(), x, y);
-    		
+    		processMove(m);
     		
     	}
     	
@@ -131,6 +131,22 @@ public class ChessBoard extends GridPane {
     		}
     	}
     }
+    
+    protected boolean processMove(MoveInformation p)
+    {
+        if (moveIsValid(p))
+        {
+            Space oldSpace = spaces[p.getOldX()][p.getOldY()];
+            Space newSpace = spaces[p.getNewX()][p.getNewY()];
+
+            newSpace.setPiece( oldSpace.removePiece() );
+            return true;
+        }
+        else // invalid move
+        {
+            return false;
+        }
+}
     
     public boolean moveIsValid(MoveInformation p)
     {

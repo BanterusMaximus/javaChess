@@ -12,14 +12,14 @@
 	-fx-background-radius: 0em;
 }
 
-.chess-space-light {
+.chess-space-white {
 	-fx-background-color: #FFCE9E;
 }
 
-.chess-space-dark {
+.chess-space-black {
 	-fx-background-color: #D18B47;
 }
 
-.chess-space-active {
+.chess-active-space {
 	-fx-background-color: red;
 }

@@ -14,8 +14,9 @@ public abstract class Piece {
 		this.color = color;
 		
 		hasMoved = false;
+		//insert your username instead of mine
 		
-		String location = "assets/";
+		String location = "file:///C:/Users/ellio/Documents/GitHub/javaChess/assets/";
 		//System.out.println("lmao");
 		String filename = this.getColor() + "_" + this.getName() + ".png";
 		System.out.printf("%s", filename);
