@@ -5,19 +5,18 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderButtonsController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorderButtonsController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Game">
             <items>
-              <MenuItem mnemonicParsing="false" fx:id="ExitMenuItem" onAction="#exitApplication" text="Exit" />
+              <MenuItem fx:id="ExitMenuItem" mnemonicParsing="false" onAction="#exitApplication" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit settings">
             <items>
-              <MenuItem mnemonicParsing="false" fx:id="fullscreenToggle" onAction="#toggleFullscreen" text="Toggle Fullscreen mode" />
+              <MenuItem fx:id="fullscreenToggle" mnemonicParsing="false" onAction="#toggleFullscreen" text="Toggle Fullscreen mode" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
