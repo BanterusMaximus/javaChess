@@ -57,10 +57,7 @@ public class ChessBoardGUI  extends Application {
 			Main.primaryStage.setFullScreen(true);
 		}
 		
-		AnchorPane chessCaputureArea = initCaptureAreaPane();
-		root.setLeft(chessCaputureArea);
-		
-		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getHeight(), Toolkit.getDefaultToolkit().getScreenSize().getWidth());
+		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight());
 		
 
 
