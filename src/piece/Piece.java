@@ -28,13 +28,13 @@ public abstract class Piece {
 			this.image = ifFullscreen(location, filename);
 		}
 		else{
-			this.image = new Image(location + filename);
+			this.image = new Image((location + filename),60,60,true,true);
 		}	
 	}
 
 	public Image ifFullscreen(String location, String filename)
 	{
-			double dimensionsOfSquare = ((Toolkit.getDefaultToolkit().getScreenSize().getHeight()-25) / 8);
+			double dimensionsOfSquare = ((Toolkit.getDefaultToolkit().getScreenSize().getHeight()-25) / 8.5);
 		
 			Image tempImage = new Image((location + filename), dimensionsOfSquare, dimensionsOfSquare, true, true); 
 			return tempImage;
