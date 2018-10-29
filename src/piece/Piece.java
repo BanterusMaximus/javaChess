@@ -21,8 +21,7 @@ public abstract class Piece {
 		//System.out.println("lmao");
 		String filename = this.getColor() + "_" + this.getName() + ".png";
 		this.image = new Image(location + filename);
-		
-		//My dumbass trying to resize stuff 
+		 
 		//Image tempImage = new Image(location+filename);
 		
 		

@@ -47,37 +47,35 @@ public class ChessBoardGUI  extends Application {
 		mainScene.getStylesheets().add("windows/application.css");
 		
 		board = new ChessBoard();
-
+		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
 		
 		AnchorPane chessCaptureArea = initCaptureAreaPane();
-
+		
+		System.out.println("HASDPUAYVDPASPDUVAPSDVPASDPHASBFPJAVSPJFb");
+		
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
 			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 			Main.setSceneAndShow(mainScene);
 			Main.primaryStage.setFullScreen(true);
 			board.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth()- chessCaptureArea.getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight()- menuBar.getHeight());
+			root.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+			double captureAreaDimension = (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - Toolkit.getDefaultToolkit().getScreenSize().getHeight())/ 2;
+			String setStlyeSting = String.format("-fx-pref-height: %f; -fx-pref-width: %f",Toolkit.getDefaultToolkit().getScreenSize().getHeight(),captureAreaDimension);
+			chessCaptureArea.setStyle(setStlyeSting);
 		}
 		
-		//root.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+		
 		root.setCenter(board);
 
-<<<<<<< HEAD
-		AnchorPane chessCaptureArea = initCaptureAreaPane();
-		
-		//double captureAreaDimension = (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - Toolkit.getDefaultToolkit().getScreenSize().getHeight())/ 2;
-		//String setStlyeSting = String.format("-fx-pref-height: %f; -fx-pref-width: %f",Toolkit.getDefaultToolkit().getScreenSize().getHeight(),captureAreaDimension);
-		//chessCaptureArea.setStyle(setStlyeSting);
-=======
-		double captureAreaDimension = (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - Toolkit.getDefaultToolkit().getScreenSize().getHeight())/ 2;
-		String setStlyeSting = String.format("-fx-pref-height: %f; -fx-pref-width: %f",Toolkit.getDefaultToolkit().getScreenSize().getHeight(),captureAreaDimension);
-		chessCaptureArea.setStyle(setStlyeSting);
->>>>>>> 70317662fd75cc8e5a57971183e4c59a4bcc67c1
-		
 		root.setLeft(chessCaptureArea);
+		
+		System.out.println( ChessBoardGUI.menuBar.getHeight() );
 
+		System.out.println("TESTTTTTTTTTTTTTTTTTTTTT");
+		
 		Main.setSceneAndShow(mainScene);
 		
 	}
