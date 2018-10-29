@@ -1,6 +1,8 @@
 package piece;
 
 
+import java.awt.Toolkit;
+
 import javafx.scene.image.Image;
 import move.MoveList;
 import windows.Main;
@@ -32,7 +34,9 @@ public abstract class Piece {
 
 	public Image ifFullscreen(String location, String filename)
 	{
-			Image tempImage = new Image((location + filename), 100, 100, true, true); 
+			double dimensionsOfSquare = ((Toolkit.getDefaultToolkit().getScreenSize().getHeight()-25) / 8);
+		
+			Image tempImage = new Image((location + filename), dimensionsOfSquare, dimensionsOfSquare, true, true); 
 			return tempImage;
 	}
 	
