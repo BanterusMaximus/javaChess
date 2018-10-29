@@ -52,8 +52,7 @@ public class ChessBoardGUI  extends Application {
 		root.setTop(menuBar);
 		
 		AnchorPane chessCaptureArea = initCaptureAreaPane();
-		
-		System.out.println("HASDPUAYVDPASPDUVAPSDVPASDPHASBFPJAVSPJFb");
+
 		
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
@@ -71,10 +70,6 @@ public class ChessBoardGUI  extends Application {
 		root.setCenter(board);
 
 		root.setLeft(chessCaptureArea);
-		
-		System.out.println( ChessBoardGUI.menuBar.getHeight() );
-
-		System.out.println("TESTTTTTTTTTTTTTTTTTTTTT");
 		
 		Main.setSceneAndShow(mainScene);
 		

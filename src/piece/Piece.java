@@ -3,6 +3,7 @@ package piece;
 
 import javafx.scene.image.Image;
 import move.MoveList;
+import windows.Main;
 
 public abstract class Piece {
 	
@@ -18,22 +19,30 @@ public abstract class Piece {
 
 		String user = System.getProperty("user.name");
 		String location = "file:///C:/Users/" + user + "/Documents/GitHub/javaChess/assets/";
-		//System.out.println("lmao");
+		
 		String filename = this.getColor() + "_" + this.getName() + ".png";
-		this.image = new Image(location + filename);
-		 
-		//Image tempImage = new Image(location+filename);
-		
-		
+
+		if (Main.primaryStage.isFullScreen() == true){
+			this.image = ifFullscreen(location, filename);
+		}
+		else{
+			this.image = new Image(location + filename);
+		}	
+	}
+
+	public Image ifFullscreen(String location, String filename)
+	{
+			Image tempImage = new Image((location + filename), 100, 100, true, true); 
+			return tempImage;
 	}
 	
-	public boolean getHasMoved() {
-		
+	public boolean getHasMoved() 
+	{
 		return this.hasMoved;
 	}
 	
-	public void setHasMoved(boolean shouldBeTrue) {
-		
+	public void setHasMoved(boolean shouldBeTrue) 
+	{
 		this.hasMoved = shouldBeTrue;
 	}
 	
