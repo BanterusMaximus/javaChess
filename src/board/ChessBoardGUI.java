@@ -3,6 +3,7 @@ package board;
 import javafx.application.Application;
 import windows.Main;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -12,6 +13,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -46,10 +48,35 @@ public class ChessBoardGUI  extends Application {
 		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
+		
+		
+		AnchorPane chessCaputureArea = initCaptureAreaPane();
+		root.setLeft(chessCaputureArea);
+		
+		
 		Main.setSceneAndShow(mainScene);
 		
 	}
 	
+	private static AnchorPane initCaptureAreaPane() 
+	{
+		try
+		{
+		System.out.println("Initalising chess capture area pane...");
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("chessCaptureArea.fxml"));
+		AnchorPane chessCaptureArea = (AnchorPane) loader.load();
+		System.out.println("Initalilised chess capture area pane.\n");
+		return chessCaptureArea;
+		}
+		
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	public static void onQuit() {
 		
 		Platform.exit();
