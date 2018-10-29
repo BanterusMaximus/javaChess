@@ -147,6 +147,23 @@ public class ChessBoard extends GridPane {
             Space newSpace = spaces[p.getNewX()][p.getNewY()];
 
             newSpace.setPiece( oldSpace.removePiece() );
+            
+            //pawn promotion m8
+            if ( p.getNewY() == 0 && newSpace.getPiece().getName() == "pawn" ) {
+            	
+            	newSpace.removePiece();
+            	newSpace.setPiece(new Queen(false));
+            	whosTurn();
+            	return true;
+            	}
+            
+            if ( p.getNewY() == 7 && newSpace.getPiece().getName() == "pawn" ) {
+            	newSpace.removePiece();
+            	newSpace.setPiece(new Queen(true));
+            	whosTurn();
+            	return true;
+            	
+            }
             whosTurn();
             return true;
         }
@@ -196,6 +213,7 @@ public class ChessBoard extends GridPane {
         int stretchedMoveX;
         int stretchedMoveY;
 
+        
         //labels this loop to break out later
         MoveLoop:
         for (MoveList m : moves)
@@ -289,6 +307,7 @@ public class ChessBoard extends GridPane {
                 {return false;}
             }
         }
+        
         else //if it's a diagonal move
         {
             //if the target square doesn't have an opposing piece, don't allow move
@@ -298,6 +317,8 @@ public class ChessBoard extends GridPane {
         }
 
         return true;
+        
+        
 }
 	
 	

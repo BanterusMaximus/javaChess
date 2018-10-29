@@ -42,7 +42,6 @@ public class ChessBoardGUI  extends Application {
 		
 		BorderPane root = new BorderPane();
 		Scene mainScene = new Scene(root);
-		
 		mainScene.getStylesheets().add("windows/application.css");
 		
 		board = new ChessBoard();
@@ -50,6 +49,7 @@ public class ChessBoardGUI  extends Application {
 		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
+<<<<<<< HEAD
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
 			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
@@ -62,6 +62,18 @@ public class ChessBoardGUI  extends Application {
 		
 		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getHeight(), Toolkit.getDefaultToolkit().getScreenSize().getWidth());
 		
+=======
+
+		if ( Main.primaryStage.isFullScreen() == true ) {
+		
+			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+			Main.setSceneAndShow(mainScene);	
+			Main.primaryStage.setFullScreen(true);
+		}
+
+		AnchorPane chessCaputureArea = initCaptureAreaPane();
+		root.setLeft(chessCaputureArea);
+>>>>>>> addc97976dcf91b3f953b75c9c731990a96f503e
 		Main.setSceneAndShow(mainScene);
 		
 	}
