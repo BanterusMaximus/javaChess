@@ -1,5 +1,7 @@
 package board;
 
+import java.awt.Toolkit;
+
 import javafx.application.Application;
 import windows.Main;
 import javafx.application.Platform;
@@ -48,11 +50,17 @@ public class ChessBoardGUI  extends Application {
 		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
-		
+		if ( Main.primaryStage.isFullScreen() == true)
+		{
+			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+			Main.setSceneAndShow(mainScene);
+			Main.primaryStage.setFullScreen(true);
+		}
 		
 		AnchorPane chessCaputureArea = initCaptureAreaPane();
 		root.setLeft(chessCaputureArea);
 		
+		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getHeight(), Toolkit.getDefaultToolkit().getScreenSize().getWidth());
 		
 		Main.setSceneAndShow(mainScene);
 		

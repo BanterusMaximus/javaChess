@@ -3,6 +3,7 @@ package board;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import piece.Piece;
+import windows.Main;
 
 public class Space extends Button {
 	
@@ -22,6 +23,12 @@ public class Space extends Button {
 			this.getStyleClass().add("chess-space-white");
 		else
 			this.getStyleClass().add("chess-space-black");
+		
+		if ( Main.primaryStage.isFullScreen() == true)
+		{
+			this.setStyle();
+		}
+		
 	}
 	
 	public boolean isOccupied() {

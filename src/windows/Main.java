@@ -10,7 +10,7 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application 
 {
-	private static Stage primaryStage;
+	public static Stage primaryStage;
 	public static String args;
 	private BorderPane rootBorder;
 	
@@ -86,5 +86,6 @@ public class Main extends Application
 	{
 		System.out.println("Starting program...\n");
 		launch(args);
+		System.out.println("Goodbye...");
 	}
 }
