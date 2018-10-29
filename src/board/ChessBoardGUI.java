@@ -22,6 +22,8 @@ import javafx.stage.Stage;
 
 public class ChessBoardGUI  extends Application {
 	
+	public static MenuBar menuBar;
+	
 	public static void ChessBoardStart() {
 		
 		try {
@@ -48,23 +50,20 @@ public class ChessBoardGUI  extends Application {
 
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
+		
+		AnchorPane chessCaptureArea = initCaptureAreaPane();
 
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
 			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 			Main.setSceneAndShow(mainScene);
 			Main.primaryStage.setFullScreen(true);
-			
-			//Minus 258 because of the chess capture area
-			board.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth()-258, Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-			System.out.println("TEST");
+			board.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth()- chessCaptureArea.getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight()- menuBar.getHeight());
 		}
 		
 		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight());
 		root.setCenter(board);
 
-		AnchorPane chessCaptureArea = initCaptureAreaPane();
-		
 		double captureAreaDimension = (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - Toolkit.getDefaultToolkit().getScreenSize().getHeight())/ 2;
 		String setStlyeSting = String.format("-fx-pref-height: %f; -fx-pref-width: %f",Toolkit.getDefaultToolkit().getScreenSize().getHeight(),captureAreaDimension);
 		chessCaptureArea.setStyle(setStlyeSting);
@@ -111,7 +110,7 @@ public class ChessBoardGUI  extends Application {
 	
 	private static MenuBar generateMenuBar() {
 		
-		MenuBar menuBar = new MenuBar();
+		menuBar = new MenuBar();
 		
 		Menu gameMenu = new Menu("Game");
 		menuBar.getMenus().add(gameMenu);
@@ -133,6 +132,7 @@ public class ChessBoardGUI  extends Application {
         menuItemAbout.setAccelerator( new KeyCodeCombination(KeyCode.F1) );
         menuItemAbout.setOnAction(e -> onDisplayAbout());
         menuHelp.getItems().add(menuItemAbout);
+        
 
         return menuBar;
 		
