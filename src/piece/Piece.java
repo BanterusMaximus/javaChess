@@ -1,5 +1,7 @@
 package piece;
 
+import java.io.File;
+
 import javafx.scene.image.Image;
 import move.MoveList;
 
@@ -15,11 +17,10 @@ public abstract class Piece {
 		
 		hasMoved = false;
 		//insert your username instead of mine
-		
-		String location = "file:///C:/Users/ellio/Documents/GitHub/javaChess/assets/";
+		String user = System.getProperty("user.name");
+		String location = "file:///C:/Users/" + user + "/Documents/GitHub/javaChess/assets/";
 		//System.out.println("lmao");
 		String filename = this.getColor() + "_" + this.getName() + ".png";
-		System.out.printf("%s", filename);
 		this.image = new Image(location + filename);
 		
 	}
