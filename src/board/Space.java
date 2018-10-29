@@ -29,7 +29,7 @@ public class Space extends Button {
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
 			//As there are 8 squares need to divide it by 8
-			double dimensionsOfSquare = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 8;
+			double dimensionsOfSquare = Toolkit.getDefaultToolkit().getScreenSize().getHeight() - ChessBoardGUI.menuBar.getHeight() / 8;
 			
 			String styleString = null;
 			styleString = String.format("-fx-pref-height: %f; -fx-pref-width: %f",dimensionsOfSquare,dimensionsOfSquare);
