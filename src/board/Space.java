@@ -1,5 +1,7 @@
 package board;
 
+import java.awt.Toolkit;
+
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import piece.Piece;
@@ -26,10 +28,14 @@ public class Space extends Button {
 		
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
+			//As there are 8 squares need to divide it by 8
+			double dimensionsOfSquare = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 8;
 			
-			this.setStyle("-fx-pref-height: 100; -fx-pref-width: 100");
+			String styleString = null;
+			styleString = String.format("-fx-pref-height: %f; -fx-pref-width: %f",dimensionsOfSquare,dimensionsOfSquare);
 			
-			System.out.println("Just did it");
+			this.setStyle(styleString);
+
 		}
 		
 	}

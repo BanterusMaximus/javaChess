@@ -45,8 +45,7 @@ public class ChessBoardGUI  extends Application {
 		mainScene.getStylesheets().add("windows/application.css");
 		
 		board = new ChessBoard();
-		root.setCenter(board);
-		
+
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
 
@@ -55,18 +54,14 @@ public class ChessBoardGUI  extends Application {
 			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 			Main.setSceneAndShow(mainScene);
 			Main.primaryStage.setFullScreen(true);
+			
+			//Minus 258 because of the chess capture area
+			board.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth()-258, Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+			System.out.println("TEST");
 		}
 		
 		root.resize(Toolkit.getDefaultToolkit().getScreenSize().getWidth(), Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-		
-
-
-		if ( Main.primaryStage.isFullScreen() == true ) {
-		
-			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-			Main.setSceneAndShow(mainScene);	
-			Main.primaryStage.setFullScreen(true);
-		}
+		root.setCenter(board);
 
 		AnchorPane chessCaptureArea = initCaptureAreaPane();
 		root.setLeft(chessCaptureArea);
