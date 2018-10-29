@@ -5,8 +5,8 @@
 	-fx-min-width:   50px;
 	-fx-pref-height: 75px;
 	-fx-pref-width:  75px;
-	-fx-max-height:  100px;
-	-fx-max-width:   100px;
+	-fx-max-height:  1000px;
+	-fx-max-width:   1000px;
 	
 	/* prevent rounded buttons */
 	-fx-background-radius: 0em;

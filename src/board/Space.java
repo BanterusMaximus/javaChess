@@ -26,7 +26,10 @@ public class Space extends Button {
 		
 		if ( Main.primaryStage.isFullScreen() == true)
 		{
-			this.setStyle();
+			
+			this.setStyle("-fx-pref-height: 100; -fx-pref-width: 100");
+			
+			System.out.println("Just did it");
 		}
 		
 	}
