@@ -47,21 +47,16 @@ public class ChessBoardGUI  extends Application {
 		
 		MenuBar menuBar = generateMenuBar();
 		root.setTop(menuBar);
-<<<<<<< HEAD
+
 		if ( Main.primaryStage.isFullScreen() == true ) {
 		
 			Main.primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 			Main.setSceneAndShow(mainScene);	
 			Main.primaryStage.setFullScreen(true);
 		}
-=======
-		
-		
+
 		AnchorPane chessCaputureArea = initCaptureAreaPane();
 		root.setLeft(chessCaputureArea);
-		
-		
->>>>>>> f71b88904619b77e650dc3f995bab92b7ff9c3ab
 		Main.setSceneAndShow(mainScene);
 		
 	}
