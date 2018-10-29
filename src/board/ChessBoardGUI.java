@@ -64,6 +64,11 @@ public class ChessBoardGUI  extends Application {
 		root.setCenter(board);
 
 		AnchorPane chessCaptureArea = initCaptureAreaPane();
+		
+		double captureAreaDimension = (Toolkit.getDefaultToolkit().getScreenSize().getWidth() - Toolkit.getDefaultToolkit().getScreenSize().getHeight())/ 2;
+		String setStlyeSting = String.format("-fx-pref-height: %f; -fx-pref-width: %f",Toolkit.getDefaultToolkit().getScreenSize().getHeight(),captureAreaDimension);
+		chessCaptureArea.setStyle(setStlyeSting);
+		
 		root.setLeft(chessCaptureArea);
 
 		Main.setSceneAndShow(mainScene);
